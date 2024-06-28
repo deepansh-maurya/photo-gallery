@@ -1,0 +1,8 @@
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+}
+.text-transparent {
+  color: transparent;
+}
