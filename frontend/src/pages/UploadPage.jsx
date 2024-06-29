@@ -20,10 +20,11 @@ export default function UploadPage() {
       body: formData,
     };
     let response = await fetch(
-      "http://localhost:3000/api/v1/upload-image",
+      "https://photo-gallery-y7xx.onrender.com/api/v1/upload-image",
       options
     );
     let injson = await response.json();
+    console.log(injson);
     if (!injson.success) {
       toast.error("Failed to upload the image");
       setLoading(false);

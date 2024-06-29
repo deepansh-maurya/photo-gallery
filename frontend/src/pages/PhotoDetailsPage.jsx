@@ -5,9 +5,13 @@ import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 export default function PhotoDetailsPage() {
   const [activateDetails, setActivateDetails] = useState(false);
-  // useEffect(() => {
-  //   toast("Hold pointer to view details", { duration: 3000 });
-  // }, []);
+  const [isDesktop, setIsDesktop] = useState(
+    window.innerWidth >= 1024 || window.innerWidth >= 768
+  );
+
+  useEffect(() => {
+    if (isDesktop) toast("Hold pointer to view details", { duration: 3000 });
+  }, []);
   const imageDetils = useLocation();
   const nav = useNavigate();
   const backgroundImageStyle = {

@@ -42,7 +42,7 @@ export const uploadPhotos = async (req, res) => {
     console.log(error);
     return res
       .status(500)
-      .json({ success: true, message: "something went wrong" });
+      .json({ success: false, message: "something went wrong" });
   }
 };
 
@@ -53,16 +53,14 @@ export const getAllPhotos = async (req, res) => {
       return res.status(404).json({ success: false, message: "empty gallery" });
     }
 
-    return res
-      .status(200)
-      .json({
-        success: true,
-        message: "images found successfully",
-        gallery: gallery,
-      });
+    return res.status(200).json({
+      success: true,
+      message: "images found successfully",
+      gallery: gallery,
+    });
   } catch (error) {
     return res
       .status(500)
-      .json({ success: true, message: "something went wrong" });
+      .json({ success: false, message: "something went wrong" });
   }
 };

@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 export default function GalleryPage() {
-  let [gallery, setGallery] = useState();
+  let [gallery, setGallery] = useState([]);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  console.log(isDesktop);
   const nav = useNavigate();
   const [metaData, setMetaData] = useState(false);
   const [description, setDescription] = useState("");
   const fetchGallery = async () => {
     console.log("Adsd");
-    const response = await fetch("http://localhost:3000/api/v1/gallery");
+    const response = await fetch(
+      "https://photo-gallery-y7xx.onrender.com/api/v1/gallery"
+    );
     const injson = await response.json();
     console.log(injson);
     setGallery(injson.gallery);
@@ -20,9 +24,7 @@ export default function GalleryPage() {
     setMetaData(metaArray);
   };
   useEffect(() => {
-    // toast("Use Arrow keys to scroll Up Down, Hover to view details", {
-    //   duration: 3000,
-    // });
+    if (isDesktop) toast("Use arrow keyes to move up down", { duration: 4000 });
     fetchGallery();
   }, []);
 
@@ -90,6 +92,16 @@ export default function GalleryPage() {
               </div>
             );
           })}
+        {gallery.length == 0 ? (
+          <div className="flex justify-center items-center h-screen">
+            <div className="text-center">
+              <h2 className="text-2xl text-red-600 font-bold mb-4">
+                No posts to display
+              </h2>
+              <p className="text-black">Check back later for updates.</p>
+            </div>
+          </div>
+        ) : null}
       </main>
       <Toaster />
     </>
