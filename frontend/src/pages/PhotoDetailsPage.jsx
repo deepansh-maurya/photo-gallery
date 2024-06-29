@@ -53,11 +53,11 @@ export default function PhotoDetailsPage() {
           </p>
         </div>
         {activateDetails ? (
-          <div className="sm:hidden z-10  absolute w-[80%] h-[100%] blur-none text-black font-extrabold flex flex-col justify-center items-center ">
-            <h1 className=" absolute top-0 m-3 text-5xl  font-extrabold text-center text-black">
+          <div className="sm:hidden z-10  absolute w-[80%] h-[100%] blur-none text-white font-extrabold flex flex-col justify-center items-center ">
+            <h1 className=" absolute top-0 m-3 text-5xl  font-extrabold text-center text-white">
               {imageDetils.state.data.title}
             </h1>
-            <p className="text-2xl font-bold text-black">
+            <p className="text-2xl font-bold text-white">
               {imageDetils.state.data.description}
             </p>
           </div>
