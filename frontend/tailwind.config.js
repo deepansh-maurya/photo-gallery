@@ -12,6 +12,11 @@ export default {
         playwriteNg: ['"Playwrite NG Modern"', "sans-serif"],
       },
     },
+    screens: {
+      sm: { min: "320px", max: "639px" },
+      md: { min: "640px", max: "1023px" },
+      lg: { min: "1024px", max: "300000px" },
+    },
   },
   plugins: [],
 };
