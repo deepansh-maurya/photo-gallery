@@ -47,7 +47,7 @@ export default function UploadPage() {
     >
       <form
         onSubmit={handleSubmit}
-        className=" bg-white/14  backdrop-filter backdrop-blur-sm border sm:px-11 md:p-24 sm:py-12 border-white p-8 px-16 lg:w-[45%] lg:h-[82%] lg:bg-white/40 rounded-3xl  lg:flex  lg:flex-col lg:px-24  "
+        className=" bg-white/14  backdrop-filter backdrop-blur-sm border sm:px-20 md:p-24 sm:py-12 border-white p-8 px-16 lg:w-[45%] lg:h-[82%] lg:bg-white/40 rounded-3xl  lg:flex  lg:flex-col lg:px-24  "
       >
         <h1 className="text-3xl mb-3 text-white sm:text-center lg:text-center lg:text-2xl  font-playwriteZa font-extrabold ">
           Upload Image

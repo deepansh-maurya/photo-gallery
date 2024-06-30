@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 export default function GalleryPage() {
-  let [gallery, setGallery] = useState([]);
+  const [loading, setloading] = useState(true);
+  let [gallery, setGallery] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
   console.log(isDesktop);
   const nav = useNavigate();
@@ -14,8 +15,9 @@ export default function GalleryPage() {
       "https://photo-gallery-y7xx.onrender.com/api/v1/gallery"
     );
     const injson = await response.json();
-    console.log(injson);
-    setGallery(injson.gallery);
+    if (injson.gallery.length == 0) setGallery(null);
+    else setGallery(injson.gallery);
+    setloading(false);
     console.log(injson);
     let metaArray = [];
     for (let i = 0; i < injson.gallery.length; i++) {
@@ -70,10 +72,10 @@ export default function GalleryPage() {
                   console.log(description);
                 }}
                 key={data._id}
-                className="relative cursor-pointer rounded-3xl flex justify-center items-center shadow-black shadow-md"
+                className="relative cursor-pointer  rounded-3xl flex justify-center items-center shadow-black shadow-md"
               >
                 <img
-                  className={`lg:w-[500px] md:w-[700px]  rounded-3xl transition-all duration-200 ease-in-out  ${
+                  className={`lg:w-[500px] md:w-[700px]  rounded-3xl transition-all duration-200 ease-in-out    ${
                     metaData[index] === true ? "blur-md rounded-3xl" : ""
                   }  `}
                   src={data.image}
@@ -92,7 +94,7 @@ export default function GalleryPage() {
               </div>
             );
           })}
-        {gallery.length == 0 ? (
+        {Array.isArray(gallery) && gallery.length == 0 ? (
           <div className="flex justify-center items-center h-screen">
             <div className="text-center">
               <h2 className="text-2xl text-red-600 font-bold mb-4">
@@ -102,6 +104,7 @@ export default function GalleryPage() {
             </div>
           </div>
         ) : null}
+        {loading && <span className="spinner"></span>}
       </main>
       <Toaster />
     </>

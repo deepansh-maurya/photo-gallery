@@ -15,7 +15,7 @@ function App() {
           setActivateGallery={setActivateGallery}
           acticvateGaller={acticvateGaller}
         ></Navbar>
-        <section className="sm:w-[90%] bg-customPurple sm:h-full sm:flex sm:justify-center sm:items-center sm:rounded-3xl sm:z-0 sm:m-auto sm:border-white  md:w-[90%] md:h-[90%] md:flex md:justify-center md:items-center md:rounded-3xl md:z-0 md:m-auto md:border-white lg:mt-0 lg:w-[82%] lg:h-[82%] lg:bg-white flex justify-center items-center rounded-3xl lg:relative lg:top-5 ">
+        <section className="sm:w-[90%] bg-customPurple sm:h-full sm:flex sm:justify-center sm:items-center sm:rounded-3xl sm:z-0 sm:m-auto sm:border-white  md:w-[90%] md:h-[90%] md:flex md:justify-center md:items-center md:rounded-3xl md:z-0 md:m-auto md:border-white lg:mt-0 lg:w-[82%] lg:h-[82%] lg:bg-white flex justify-center items-center rounded-3xl lg:relative lg:top-5 sm:mt-5 ">
           <Outlet
             acticvateUpload={acticvateUpload}
             setActivateUpload={setActivateUpload}

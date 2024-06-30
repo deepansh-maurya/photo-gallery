@@ -19,7 +19,6 @@ export default function PhotoDetailsPage() {
   };
   return (
     <>
-      '
       <div
         className="w-[100%] h-[100%] relative z-0 overflow-hidden rounded-3xl flex font-playwriteNg justify-center items-center"
         onMouseDown={() => setActivateDetails(true)}
@@ -27,20 +26,20 @@ export default function PhotoDetailsPage() {
       >
         <div
           style={backgroundImageStyle}
-          className={` sm:hidden lg:visible md:visible w-[100%] h-[100%] border-black sm:w-[100%]  rounded-3xl bg-cover absolute top-0 left-0 bg-center object-cover transition-all transition-200 ease-in-out  ${
+          className={` sm:w-[100%] sm:h-[150px] md:w-[100%] md:h-[100%] lg:w-[100%] lg:h-[100%]  border-black rounded-3xl bg-cover absolute top-0 left-0 bg-center object-cover transition-all transition-200 ease-in-out  ${
             activateDetails ? "blur-lg" : null
           } `}
         ></div>
-        <img
+        {/* <img
           src={imageDetils.state.data.image}
           className="sm:absolute lg:hidden md:hidden sm:top-2 sm:w-[100%] sm:h-[38%] md:top-2 md:w-[100%] md:h-[48%] rounded-3xl  shadow-md shadow-black"
           alt=""
-        />
+        /> */}
         <button
           onClick={() => {
             nav("/");
           }}
-          className="rounded-full p-1 sm:absolute sm:top-5 sm:left-3 md:absolute md:top-5 md:left-3 absolute  top-2 left-2 shadow-black shadow-md bg-white/80 transition-all transition-200 ease-in-out hover:bg-black hover:text-white font-extrabold "
+          className="rounded-full p-1 sm:absolute sm:top-5 sm:left-3 md:absolute md:top-5 md:left-3 absolute  top-2 left-2 shadow-black shadow-md bg-white/80 transition-all transition-200 ease-in-out hover:bg-black hover:text-white font-extrabold sm:w-[10%] "
         >
           <RxDoubleArrowLeft />
         </button>
