@@ -19,7 +19,7 @@ const router = createBrowserRouter(
       <Route
         path="/photo-details-page"
         element={
-          <Suspense fallback={<div>loading....</div>}>
+          <Suspense fallback={<div className="spinner"></div>}>
             <LazyPhotoDetailsPage />
           </Suspense>
         }
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       <Route
         path="/"
         element={
-          <Suspense fallback={<div>loading....</div>}>
+          <Suspense fallback={<div className="spinner"></div>}>
             <LazyGalleryPage />
           </Suspense>
         }
@@ -35,7 +35,7 @@ const router = createBrowserRouter(
       <Route
         path="/upload-page"
         element={
-          <Suspense fallback={<div>loading....</div>}>
+          <Suspense fallback={<div className="spinner"></div>}>
             <LazyUploadPage />
           </Suspense>
         }
